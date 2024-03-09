@@ -7,9 +7,9 @@ public class AppBanco {
         CuentaBancaria miCuenta = new CuentaBancaria();
         CuentaBancaria vanessaCuenta = new CuentaBancaria();
 
-        miCuenta.consignar(1000000);
+        miCuenta.consignar(10000000);
         miCuenta.retirar(950000);
-        miCuenta.transferir(400000, vanessaCuenta);
+        miCuenta.transferir(40000, vanessaCuenta);
         miCuenta.mostrarSaldo();
         System.out.println("Vanessa");
         vanessaCuenta.mostrarSaldo();
