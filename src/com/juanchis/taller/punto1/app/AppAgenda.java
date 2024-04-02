@@ -23,6 +23,8 @@ import java.util.List;
 
             buscados.forEach(c -> System.out.println(c.getNombre() + " " + c.getApellido()));
 
+            System.out.println("Los contactos Ordenados alfabeticamente son:" + agenda.ordenarContactos());
+
             System.out.println(agenda.getNumeroDeContactos());
         }
 }
