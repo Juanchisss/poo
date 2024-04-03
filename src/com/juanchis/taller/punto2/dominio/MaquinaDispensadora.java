@@ -1,6 +1,9 @@
 package com.juanchis.taller.punto2.dominio;
 import com.juanchis.taller.punto2.dominio.Snack;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 
 public class MaquinaDispensadora {
@@ -31,7 +34,7 @@ public class MaquinaDispensadora {
     }
 
 ///2METODO PARA SACAR UN SNACK POR CODIGO
-    public void sacarProductoPorCodigo(String codigo) {
+    public void sacarSnackPorCodigo(String codigo) {
         for (Snack snack : snacks) {
             if (snack.getCodigo().equalsIgnoreCase(codigo)) {
                 if (snack.getCantidad() > 0) {
@@ -62,7 +65,7 @@ public class MaquinaDispensadora {
     }
 
 //4AUMENTAR CANTIDAD DE SNACKS POR CODIGO (FALTA POR NOMBRE)
-    public void reabastecerProducto(String codigo, int cantidad) {
+    public void aumentarSnack(String codigo, int cantidad) {
         for (Snack snack : snacks) {
             if (snack.getCodigo().equalsIgnoreCase(codigo)) {
                 int nuevaCantidad = Math.min(snack.getCantidad() + cantidad, Snack.MAX_CANTIDAD);
@@ -93,16 +96,8 @@ public class MaquinaDispensadora {
         System.out.println("Snack eliminado si existía.");
     }
 
-///6
-
-///7MOSTRAR PRODUCTOS AGOTADOS
-        public int mostrarSnacksAgotados () {
-            return snacks.size();
-        }
-
-
-///8MOSTRAR SNACKS QUE QUEDAN EN GENERAL
-        public void mostrarSnacks() {
+///6MOSTRAR SNACKS QUE QUEDAN EN GENERAL
+      public void mostrarSnacks() {
             if (snacks.isEmpty()) {
                 System.out.println("No hay productos en la máquina.");
             } else {
@@ -112,8 +107,21 @@ public class MaquinaDispensadora {
             }
         }
 
+///7MOSTRAR PRODUCTOS AGOTADOS
+    public List<Snack> mostrarSnacksAgotados() {
+        List<Snack> agotados = new ArrayList<>();
+        for (Snack snack : snacks) {
+            if (snack.getCantidad() == 0) {
+                agotados.add(snack);
+            }
+        }
+        return agotados;
+}
+
+
 ///9Ordenados de mayor a menor
         public void ordenadosMenorAMayor(){};
     }
 
-    ///10 ordenados de mayor a menor
+    ///10 ordenados de menor a mayor
+

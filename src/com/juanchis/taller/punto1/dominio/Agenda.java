@@ -1,8 +1,8 @@
 package com.juanchis.taller.punto1.dominio;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Agenda {
     public static final int CAPACIDAD = 50;
@@ -74,27 +74,13 @@ public class Agenda {
         }
     }
 
-    public List<Contacto> ordenarContactos() {
-        List<Contacto> contactosOrdenados = this.contactos;
-        this.contactos.stream().sorted( (contacto1, contacto2) -> contacto1.getNombre().compareTo(contacto2.getNombre())).collect(Collectors.toList());
-
-        return contactosOrdenados;
+    public List<Contacto> ordenarAlfabeticamente() {
+        this.contactos.sort(
+                Comparator.comparing(Contacto::getNombre)
+                        .thenComparing(Contacto::getApellido)
+        );
+        return this.contactos;
     }
-
-    public List<Contacto> getcontactosOrdenados() {
-        return getcontactosOrdenados();
-    }
-
-    ///contactos.stream()
-        ///  .sorted((n1, n2) -> {
-        ///     int nombreComparacion = n1.getNombre().compareTo(n2.getNombre());
-        ///        if (nombreComparacion == 0) {
-        ///           return n1.getApellido().compareTo(n2.getApellido());
-        ///       }
-        ///       return nombreComparacion;
-        ///        .collect(Collectors.toList());
-
-
 
     public int getNumeroDeContactos() {
         return this.contactos.size();

@@ -1,6 +1,6 @@
 package com.juanchis.taller.punto1.dominio;
 
-public class Contacto {
+public class Contacto{
     private String nombre;
     private String apellido;
     private long celular;
@@ -11,19 +11,27 @@ public class Contacto {
         this.celular = celular;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
-    //getters y setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public String getNombre() {return nombre;}
+    public String getApellido() {
+        return apellido;
+    }
 
-    public void setNombre(String nombre) {this.nombre = nombre;}
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-    public String getApellido() {return apellido;}
+    public long getCelular() {
+        return celular;
+    }
 
-    public void setApellido(String apellido) {this.apellido = apellido;}
-
-    public long getCelular() {return celular;}
-
-    public void setCelular(long celular) {this.celular = celular;}
-
+    public void setCelular(long celular) {
+        this.celular = celular;
+    }
 }
