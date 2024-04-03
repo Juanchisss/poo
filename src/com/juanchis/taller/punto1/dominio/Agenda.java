@@ -75,12 +75,17 @@ public class Agenda {
     }
 
     public List<Contacto> ordenarContactos() {
-        List<Contacto> contactosOrdenados = contactos;
-        this.contactos.stream().sorted((contacto1, contacto2) -> contacto1.getNombre().compareTo(contacto2.getNombre())).collect(Collectors.toList());
+        List<Contacto> contactosOrdenados = this.contactos;
+        this.contactos.stream().sorted( (contacto1, contacto2) -> contacto1.getNombre().compareTo(contacto2.getNombre())).collect(Collectors.toList());
+
         return contactosOrdenados;
     }
 
-                ///contactos.stream()
+    public List<Contacto> getcontactosOrdenados() {
+        return getcontactosOrdenados();
+    }
+
+    ///contactos.stream()
         ///  .sorted((n1, n2) -> {
         ///     int nombreComparacion = n1.getNombre().compareTo(n2.getNombre());
         ///        if (nombreComparacion == 0) {

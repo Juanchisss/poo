@@ -23,6 +23,7 @@ import java.util.List;
 
             buscados.forEach(c -> System.out.println(c.getNombre() + " " + c.getApellido()));
 
+            //Sale el error de la ubicacion en memoria
             System.out.println("Los contactos Ordenados alfabeticamente son:" + agenda.ordenarContactos());
 
             System.out.println(agenda.getNumeroDeContactos());
