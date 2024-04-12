@@ -120,7 +120,8 @@ public class MaquinaDispensadora {
 
 
 ///9Ordenados de mayor a menor
-        public void ordenadosMenorAMayor(){};
+        public void ordenadosMenorAMayor(){;
+        }
     }
 
     ///10 ordenados de menor a mayor

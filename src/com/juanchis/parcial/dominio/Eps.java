@@ -50,8 +50,12 @@ public class Eps {
         }
     }
 
+
+    //corregir
     public List<Paciente> buscarPacientesPorEnfermedad(Enfermedad nombre) {
-        return this.pacientes.stream().filter(enf -> enf.getEnfermedades().equals(nombre)).toList();
+        return this.pacientes.stream().
+                filter(enf -> enf.getEnfermedades().
+                        equals(nombre)).toList();
     }
 
     public List<Paciente> obtenerPacientesSinEnfermedades() {
