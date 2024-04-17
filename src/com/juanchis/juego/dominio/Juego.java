@@ -15,10 +15,4 @@ public class Juego {
         opciones.add(tijera);
     }
 
-    public void mostrarOpciones() {
-        System.out.println("Opciones disponibles:");
-        for (String elemento : opciones) {
-            System.out.println(elemento);
-        }
-    }
 }

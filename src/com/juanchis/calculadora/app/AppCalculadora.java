@@ -19,6 +19,11 @@ public class AppCalculadora {
 
             int n = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos numeros desea operar?"));
 
+            double[] numeros = new double[n];
+            for (int i=0; i < n; i++ ){
+                numeros[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor: " + (i+1)));
+            }
+
             int opcion = JOptionPane.showOptionDialog(null, "Selecciona una operación",
                     "POO - Calculadora", 0, 0, ICONO,
                     Arrays.asList("Sumar", "Restar", "Multiplicar", "Dividir", redondeoCheckbox).toArray(), null);
@@ -27,15 +32,13 @@ public class AppCalculadora {
                 System.exit(0);
             }
 
-            double numero1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor 1"));
-            double numero2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor 2"));
             double resultado = 0;
 
             switch (opcion) {
-                case SUMAR -> resultado = Calculadora.sumar(numero1, numero2);
-                case RESTAR -> resultado = Calculadora.restar(numero1, numero2);
-                case MULTIPLICAR -> resultado = Calculadora.multiplicar(numero1, numero2);
-                case DIVIDIR -> resultado = Calculadora.dividir(numero1, numero2, false);
+                case SUMAR -> resultado = Calculadora.sumar(numeros);
+                case RESTAR -> resultado = Calculadora.restar(numeros);
+                case MULTIPLICAR -> resultado = Calculadora.multiplicar(numeros);
+                case DIVIDIR -> resultado = Calculadora.dividir(numeros[0], numeros[1], false);
             }
 
 
@@ -43,20 +46,6 @@ public class AppCalculadora {
                 resultado = Math.round(resultado);
             }
             mostrarMensaje("El resultado es " + resultado);
-//
-//            if (opcion == SUMAR) {
-//                resultado = Calculadora.sumar(numero1, numero2);
-//            } else if (opcion == RESTAR) {
-//                resultado = Calculadora.restar(numero1, numero2);
-//            } else if (opcion == MULTIPLICAR) {
-//                resultado = Calculadora.multiplicar(numero1, numero2);
-//            } else if (opcion == DIVIDIR) {
-//                resultado = Calculadora.dividir(numero1, numero2, false);
-//            }
-//            if (redondeoCheckbox.isSelected()) {
-//                resultado = Math.round(resultado);
-//            }
-//            mostrarMensaje("El resultado es " + resultado);
         }
 
 
