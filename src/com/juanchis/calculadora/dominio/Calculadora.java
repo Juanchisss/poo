@@ -29,4 +29,8 @@ public class Calculadora {
     public static double dividir(double a, double b, boolean redondear) {
         return a / b;
     }
+
+    public static double promediar(double[] numeros){
+       return sumar(numeros) / numeros.length;
+    }
 }

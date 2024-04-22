@@ -11,6 +11,7 @@ public class AppCalculadora {
     public static final int RESTAR = 1;
     public static final int MULTIPLICAR = 2;
     public static final int DIVIDIR = 3;
+    public static final int PROMEDIAR = 4;
     public static final ImageIcon ICONO = new ImageIcon(AppCalculadora.class.getResource("IconoUco.png"));
     public static JCheckBox redondeoCheckbox = new JCheckBox("¿Redondear?");
 
@@ -21,12 +22,13 @@ public class AppCalculadora {
 
             double[] numeros = new double[n];
             for (int i=0; i < n; i++ ){
+
                 numeros[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor: " + (i+1)));
             }
 
             int opcion = JOptionPane.showOptionDialog(null, "Selecciona una operación",
                     "POO - Calculadora", 0, 0, ICONO,
-                    Arrays.asList("Sumar", "Restar", "Multiplicar", "Dividir", redondeoCheckbox).toArray(), null);
+                    Arrays.asList("Sumar", "Restar", "Multiplicar", "Dividir", "Promediar", redondeoCheckbox).toArray(), null);
 
             if (opcion == JOptionPane.CLOSED_OPTION) {
                 System.exit(0);
@@ -39,6 +41,7 @@ public class AppCalculadora {
                 case RESTAR -> resultado = Calculadora.restar(numeros);
                 case MULTIPLICAR -> resultado = Calculadora.multiplicar(numeros);
                 case DIVIDIR -> resultado = Calculadora.dividir(numeros[0], numeros[1], false);
+                case PROMEDIAR -> resultado = Calculadora.promediar(numeros);
             }
 
 

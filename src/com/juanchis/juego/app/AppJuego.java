@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class AppJuego {
     public static final ImageIcon ICONOJUEGO = new ImageIcon(AppJuego.class.getResource("iconojuego.png"));
-    public static List<String> opciones = Arrays.asList("Piedra", "Papel", "Tijera");
+    public static List<String> opciones = Arrays.asList("Piedra", "Papel", "Tijera", "Pistola");
     public static int victorias = 0;
     public static int derrotas = 0;
     public static int empates = 0;
@@ -25,7 +25,9 @@ public class AppJuego {
 
             switch (opcion) {
                 case 0:
-                    JOptionPane.showMessageDialog(null, "Estas son las instrucciones perra");
+                    JOptionPane.showMessageDialog(null, "Estas son las instrucciones del juego: \n" +
+                            "La Tijera le gana al papel\n El Papel le gana a la Piedra \n La piedra le gana a la Tijera \n" +
+                            "La pistola le gana a la Piedra y a la Tijera pero no al papel ");
                     break;
 //Pregunta. Al intentar traer la lista de la clase Juego, no me muestra la lita al ejecutar el codigo
                 case 1:
@@ -73,11 +75,13 @@ public class AppJuego {
             return "Empate";
         } else if ((opcionUsuarioStr.equals("Piedra") && jugadaComputadora.equals("Tijera")) ||
                 (opcionUsuarioStr.equals("Papel") && jugadaComputadora.equals("Piedra")) ||
-                (opcionUsuarioStr.equals("Tijera") && jugadaComputadora.equals("Papel"))) {
+                (opcionUsuarioStr.equals("Tijera") && jugadaComputadora.equals("Papel")) ||
+                (opcionUsuarioStr.equals("Pistola") && jugadaComputadora.equals("Tijera")) ||
+                (opcionUsuarioStr.equals("Pistola") && jugadaComputadora.equals("Piedra"))) {
             return "Ganaste";
         } else {
             return "Perdiste";
-        }
+        }   
     }
 
 
