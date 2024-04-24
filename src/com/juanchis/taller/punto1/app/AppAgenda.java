@@ -14,6 +14,7 @@ import java.util.List;
             agenda.crearContacto("Pablo", "Alboran", 32000);
             agenda.crearContacto("Javier", "Ibarra", 33000);
             agenda.crearContacto("CaRiTo", "PeReZ", 34000);
+            agenda.crearContacto("Juanchis", "Botro", 222);
 
             agenda.cambiarCelular(33000, 33333);
             Contacto buscado = agenda.buscar(33333);
