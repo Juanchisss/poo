@@ -1,17 +1,16 @@
 package com.juanchis.figuras.dominio;
 
-public class Cuadrado extends FigurasGeometricas{
-    private double arista;
+import com.juanchis.herencia.dominio.Cuadrilatero;
 
-    public Cuadrado(double arista){
-        this.arista = arista;
+public class Cuadrado extends Cuadrilatero {
+
+    public Cuadrado(double ladoA, double ladoB) {super(ladoA, ladoB);}
+
+    @Override
+    public String toString() {
+        return "Cuadrado";
     }
 
-    public void hallarAreaCuadrado(){
-        double area = arista * 4;
-        System.out.printf("El area del cuadrado cuya arista mide " + arista + " es igual a " + area + "\n");
 
-    }
 
-    public double getArista() {return arista;}
 }

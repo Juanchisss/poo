@@ -1,18 +1,30 @@
 package com.juanchis.figuras.dominio;
 
-public class Triangulo extends FigurasGeometricas {
-    private double base;
-    private double altura;
+public class Triangulo extends FiguraGeometrica {
+    protected double base;
+    protected double altura;
+    protected double ladoA;
+    protected double ladoB;
 
-    public Triangulo(double base, double altura){
+    public Triangulo(double base, double altura, double ladoA){
         this.base = base;
         this.altura = altura;
+        this.ladoA = ladoA;
     }
 
-
-    public void hallarAreaTriangulo(){
-        double area = ( base * altura ) / 2;
-        System.out.printf("El area de su triangulo cuya base es " + base + " y cuya altura es " + altura
-        + " es igual a " + area + "\n");
+    @Override
+    public String toString() {
+        return "Triangulo";
     }
+
+    @Override
+    public double hallarArea() {
+        return ((base * altura) / 2);
+    }
+
+    @Override
+    public double hallarPerimetro() {
+        return (3 * ladoA);
+    }
+
 }

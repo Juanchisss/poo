@@ -1,7 +1,20 @@
 package com.juanchis.herencia.dominio;
 
 public class Carro extends Vehiculo{
-    private String placa;
+    protected String placa;
+
+    public Carro(String marca, String modelo) { super(marca, modelo); }
+
+    public Carro(String marca, String modelo, String color){super(marca, modelo, color);}
+
+    @Override
+    public String toString() {
+        return "Carro {" +
+                " Placa: "  + placa +
+                ", Marca: " + marca +
+                ", Modelo: " + modelo + "} "
+                ;
+    }
 
     public String getPlaca() {return placa;}
 

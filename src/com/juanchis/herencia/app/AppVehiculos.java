@@ -10,15 +10,15 @@ public class AppVehiculos {
     public static void main(String[] args) {
         List<Vehiculo> vehiculos = new ArrayList<>();
 
-        Vehiculo nando = new Vehiculo();
+        Vehiculo nando = new Vehiculo("Nando","A pata");
 
-        Carro corolirri = new Carro();
+        Carro corolirri = new Carro("Toyota", "Corola");
 
-        Taxi taxi = new Taxi();
+        Taxi taxi = new Taxi("Hyundai", "Accent", "Copebombasx");
 
-        Bicicleta bici = new Bicicleta();
+        Bicicleta bici = new Bicicleta("Trek","Marlin7");
 
-        BiciRuta biciRuta = new BiciRuta();
+        BiciRuta biciRuta = new BiciRuta("Dogma","Pinarello");
 
         vehiculos.add(nando);
         vehiculos.add(corolirri);
@@ -28,19 +28,18 @@ public class AppVehiculos {
 
         acelerarVehiculos(vehiculos);
 
-        frenarVehiculos(vehiculos);
     }
 
     public static void acelerarVehiculos(List<Vehiculo> vehiculos) {
         for (Vehiculo vehiculo : vehiculos) {
-            if (vehiculo instanceof Carro) {
-                System.out.println("Soy un carro...");
-            } else if (vehiculo instanceof Bicicleta) {
-                System.out.printf("Soy una Bici...");
-            }
+//            if (vehiculo instanceof Carro) {
+//                System.out.println("Soy un carro...");
+//            } else if (vehiculo instanceof Bicicleta) {
+//                System.out.printf("Soy una Bici...");
+//            }
 
             vehiculo.acelerar(new Random().nextInt(100));
-            System.out.printf("El" + vehiculo + "Va a " + vehiculo.getVelocidad() + "Km/H");
+            System.out.printf(vehiculo + "va a " + vehiculo.getVelocidad() + "Km/H\n");
 
         }
     }
@@ -55,7 +54,7 @@ public class AppVehiculos {
                 }
 
                 vehiculo.frenar(new Random().nextInt(100));
-                System.out.printf("El" + vehiculo + "ha frenado hasta llegar a " + vehiculo.getVelocidad() + "Km/h");
+                System.out.printf(vehiculo + "ha frenado hasta llegar a " + vehiculo.getVelocidad() + "Km/h");
             }
         }
 
