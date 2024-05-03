@@ -1,0 +1,21 @@
+package com.juanchis.facturacion.dominio;
+
+import java.time.LocalDate;
+
+public class FacturaConIva extends Factura{
+    private double porcIva;
+
+    public FacturaConIva(long valor, String cliente, LocalDate fechaVencimiento, double porcIva) {
+        super(cliente, valor, fechaVencimiento);
+        this.porcIva = porcIva;
+    }
+
+    public long calcularIva(){
+       return (long) (porcIva * valor);
+    }
+
+    @Override
+    protected long calcularTotal() {
+        return valor + calcularIva();
+    }
+}
