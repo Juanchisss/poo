@@ -60,7 +60,4 @@ public class Facturacion {
         }
         return facturasSinIva;
     }
-
-
-
 }

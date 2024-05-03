@@ -10,8 +10,13 @@ public class FacturaConDescuento extends FacturaSinIva{
         this.porcDescuento = porcDescuento;
     }
 
+    @Override
+    protected long calcularTotal() {
+        return valor - calcularDescuento();
+    }
+
     public long calcularDescuento(){
         double valorDescuento = (porcDescuento * valor);
-        return (long) (valor - valorDescuento);
+        return (long) valorDescuento;
     }
 }

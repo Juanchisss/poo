@@ -7,8 +7,6 @@ public class FacturaSinIva extends Factura{
         super(cliente, valor, fechaVencimiento);
     }
 
-
-
     @Override
     protected long calcularTotal() {
         return valor;
