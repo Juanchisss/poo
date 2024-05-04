@@ -13,8 +13,8 @@ public class AppFiguras {
 
         Circulo bolita = new Circulo(4);
         Cuadrilatero cuadro = new Cuadrado(4, 4);
-        Triangulo triangu = new trianEquilatero(2,2, 4);
-        trianIsosceles iso = new trianIsosceles(2,2,2,2);
+        Triangulo triangu = new TrianguloEquilatero(2,2, 4);
+        TrianguloIsosceles iso = new TrianguloIsosceles(2,2,2,2);
         Rectangulo iris = new Rectangulo(3, 1);
 
 

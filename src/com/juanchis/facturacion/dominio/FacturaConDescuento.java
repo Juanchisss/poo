@@ -19,4 +19,15 @@ public class FacturaConDescuento extends FacturaSinIva{
         double valorDescuento = (porcDescuento * valor);
         return (long) valorDescuento;
     }
+
+    @Override
+    public String toString() {
+        return "FacturaConDescuento{" +
+                "valor=" + valor +
+                ", cliente='" + cliente + '\'' +
+                ", fechaVencimiento=" + fechaVencimiento +
+                ", descuento=" + porcDescuento +
+                ", total= " + calcularTotal() +
+                '}';
+    }
 }

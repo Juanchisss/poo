@@ -18,4 +18,14 @@ public class FacturaConIva extends Factura{
     protected long calcularTotal() {
         return valor + calcularIva();
     }
+
+    @Override
+    public String toString() {
+        return "FacturaConIva{" +
+                "valor=" + valor +
+                ", cliente='" + cliente + '\'' +
+                ", fechaVencimiento=" + fechaVencimiento +
+                ".,total de la factura=" + calcularTotal() +
+                '}';
+    }
 }

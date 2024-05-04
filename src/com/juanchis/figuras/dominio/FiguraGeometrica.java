@@ -1,10 +1,10 @@
 package com.juanchis.figuras.dominio;
 
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
 
-    public double hallarArea(){return 0;}
+    public abstract double hallarArea();
 
-    public double hallarPerimetro(){return 0;}
+    public abstract double hallarPerimetro();
 
     public static void hallarValores(FiguraGeometrica figura){
         System.out.printf("El area del " + figura + " es: ");

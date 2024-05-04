@@ -1,7 +1,7 @@
 package com.juanchis.figuras.dominio;
 
-public class trianIsosceles extends Triangulo{
-    public trianIsosceles(double base, double altura, double ladoA, double ladoB) {super(base, altura, ladoA);}
+public class TrianguloIsosceles extends Triangulo{
+    public TrianguloIsosceles(double base, double altura, double ladoA, double ladoB) {super(base, altura, ladoA);}
 
     @Override
     public String toString() {

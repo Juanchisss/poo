@@ -26,4 +26,13 @@ public class FacturaVencida extends Factura{
         return VLR_DIA_VENCIDO * getDiasVencidos();
     }
 
+    @Override
+    public String toString() {
+        return "FacturaVencida{" +
+                "valor=" + valor +
+                ", cliente='" + cliente + '\'' +
+                ", fechaVencimiento=" + fechaVencimiento +
+                ", total..= " + calcularTotal() +
+                '}';
+    }
 }

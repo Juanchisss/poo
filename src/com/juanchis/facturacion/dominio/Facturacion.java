@@ -15,14 +15,14 @@ public class Facturacion {
     public void generarFactura(String cliente, long valor, LocalDate fecha) {
         Factura factura = null;
 
-        if (valor < 1000000){
-            factura = new FacturaSinIva(valor, cliente, fecha);
-        } else if (valor >= 1000000) {
-            factura = new FacturaConIva(valor, cliente, fecha, 0.19);
-        }else if(valor >= 5_000_000){
-            factura = new FacturaConDescuento(valor,cliente,fecha, 0.10);
-        } else if (fecha.isBefore(LocalDate.now())) {
+        if (fecha.isBefore(LocalDate.now())) {
             factura = new FacturaVencida(valor, cliente, fecha);
+        } else if (valor < 1_000_000){
+            factura = new FacturaSinIva(valor, cliente, fecha);
+        } else if (valor < 5_000_000) {
+            factura = new FacturaConIva(valor, cliente, fecha, 0.19);
+        }else {
+            factura = new FacturaConDescuento(valor,cliente,fecha, 0.10);
         }
 
         this.facturas.add(factura);
@@ -31,7 +31,7 @@ public class Facturacion {
     public long getTotalFacturacion(){
         long totalFacturacion = 0;
         for(Factura factura : facturas){
-            totalFacturacion += factura.valor ;
+            totalFacturacion += factura.calcularTotal();
         }
         return totalFacturacion;
     }
@@ -53,6 +53,7 @@ public class Facturacion {
 
     public List<Factura> getFacturasSinIva() {
         List<Factura> facturasSinIva = new ArrayList<>();
+
         for(Factura facturaSin : facturas){
             if(facturaSin instanceof FacturaSinIva){
                 facturasSinIva.add(facturaSin);
