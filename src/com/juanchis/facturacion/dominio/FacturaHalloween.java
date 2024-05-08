@@ -2,25 +2,27 @@ package com.juanchis.facturacion.dominio;
 
 import java.time.LocalDate;
 
-public class FacturaSinIva extends Factura{
-    public FacturaSinIva(long valor, String cliente, LocalDate fechaVencimiento, String medioPago) {
+public class FacturaHalloween extends Factura{
+    double diaMaldito = 0.666;
+
+    public FacturaHalloween(String cliente, long valor, LocalDate fechaVencimiento, String medioPago, double diaMaldito) {
         super(cliente, valor, fechaVencimiento, medioPago);
+        this.diaMaldito = diaMaldito;
     }
 
     @Override
     protected long calcularTotal() {
-        System.out.println(valor);
-        return valor;
+        return (long) (valor + (valor * diaMaldito));
     }
 
     @Override
     public String toString() {
-        return "FacturaSinIva{" +
+        return "FacturaHalloween{" +
                 "valor=" + valor +
                 ", cliente='" + cliente + '\'' +
                 ", fechaVencimiento=" + fechaVencimiento +
                 ", medioPago='" + medioPago + '\'' +
-                ", total=" + this.calcularTotal() +
+                ", total=" + calcularTotal() +
                 '}';
     }
 }

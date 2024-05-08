@@ -12,17 +12,21 @@ public class Facturacion {
     }
 
 
-    public void generarFactura(String cliente, long valor, LocalDate fecha) {
+    public void generarFactura(String cliente, long valor, LocalDate fecha, String medioPago) {
         Factura factura = null;
 
         if (fecha.isBefore(LocalDate.now())) {
-            factura = new FacturaVencida(valor, cliente, fecha);
+            factura = new FacturaVencida(valor, cliente, fecha, medioPago);
+        } else if (fecha.isEqual(LocalDate.of(2024,10,31))) {
+            factura = new FacturaHalloween(cliente, valor, LocalDate.of(2024, 10, 31), medioPago, 0.666);
+        } else if (medioPago.equalsIgnoreCase("Tarjeta")) {
+            factura = new FacturaConTarjeta(cliente, valor, fecha, "Tarjeta",0.10);
         } else if (valor < 1_000_000){
-            factura = new FacturaSinIva(valor, cliente, fecha);
+            factura = new FacturaSinIva(valor, cliente, fecha, medioPago);
         } else if (valor < 5_000_000) {
-            factura = new FacturaConIva(valor, cliente, fecha, 0.19);
+            factura = new FacturaConIva(valor, cliente, fecha, medioPago,0.19);
         }else {
-            factura = new FacturaConDescuento(valor,cliente,fecha, 0.10);
+            factura = new FacturaConDescuento(valor,cliente,fecha, medioPago,0.10);
         }
 
         this.facturas.add(factura);

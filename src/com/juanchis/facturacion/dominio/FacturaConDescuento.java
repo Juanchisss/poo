@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class FacturaConDescuento extends FacturaSinIva{
     private double porcDescuento;
 
-    public FacturaConDescuento(long valor, String cliente, LocalDate fechaVencimiento,double porcDescuento) {
-        super(valor, cliente, fechaVencimiento);
+    public FacturaConDescuento(long valor, String cliente, LocalDate fechaVencimiento,String medioPago, double porcDescuento) {
+        super(valor, cliente, fechaVencimiento, medioPago);
         this.porcDescuento = porcDescuento;
     }
 
@@ -27,6 +27,7 @@ public class FacturaConDescuento extends FacturaSinIva{
                 ", cliente='" + cliente + '\'' +
                 ", fechaVencimiento=" + fechaVencimiento +
                 ", descuento=" + porcDescuento +
+                ", medioPago='" + medioPago + '\'' +
                 ", total= " + calcularTotal() +
                 '}';
     }

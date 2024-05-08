@@ -6,8 +6,8 @@ import java.time.Period;
 public class FacturaVencida extends Factura{
     public static int VLR_DIA_VENCIDO = 1000;
 
-    public FacturaVencida(long valor, String cliente, LocalDate fechaVencimiento) {
-        super(cliente, valor, fechaVencimiento);
+    public FacturaVencida(long valor, String cliente, LocalDate fechaVencimiento, String medioPago) {
+        super(cliente, valor, fechaVencimiento, medioPago);
     }
 
     @Override
@@ -32,6 +32,7 @@ public class FacturaVencida extends Factura{
                 "valor=" + valor +
                 ", cliente='" + cliente + '\'' +
                 ", fechaVencimiento=" + fechaVencimiento +
+                ", medioPago='" + medioPago + '\'' +
                 ", total..= " + calcularTotal() +
                 '}';
     }

@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class FacturaConIva extends Factura{
     private double porcIva;
 
-    public FacturaConIva(long valor, String cliente, LocalDate fechaVencimiento, double porcIva) {
-        super(cliente, valor, fechaVencimiento);
+    public FacturaConIva(long valor, String cliente, LocalDate fechaVencimiento, String medioPago, double porcIva) {
+        super(cliente, valor, fechaVencimiento, medioPago);
         this.porcIva = porcIva;
     }
 
@@ -26,6 +26,7 @@ public class FacturaConIva extends Factura{
                 ", cliente='" + cliente + '\'' +
                 ", fechaVencimiento=" + fechaVencimiento +
                 ".,total de la factura=" + calcularTotal() +
+                ", medioPago='" + medioPago + '\'' +
                 '}';
     }
 }
