@@ -3,7 +3,6 @@ package com.juanchis.tiendaBicis.app;
 import com.juanchis.tiendaBicis.dominio.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AppNomina {
     public static void main(String[] args) {
@@ -15,6 +14,8 @@ public class AppNomina {
         nomina.listarDirectos();
         System.out.printf("\n");
         nomina.listarFreelancers();
+        System.out.printf("\n");
+        nomina.listarPromotores();
 
 
     }
