@@ -3,17 +3,24 @@ package com.juanchis.inmobiliaria.app;
 import com.juanchis.inmobiliaria.dominio.*;
 
 public class AppAgencia {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArrendadoException, InmuebleNoArrendableException {
         Agencia agencia = new Agencia("Bienes raicez");
 
         Apartamento apt = new Apartamento("Calle 1", 200_000_000, 1_500_000);
-        Inmueble casa = new Casa("CALLE 2", 300_000_000, 2_000_000);
-        Inmueble lote = new Lote("Calle 3", 90_000_000, 0);
+        Casa casa = new Casa("Calle 2", 300_000_000, 2_000_000);
+        Lote lote = new Lote("Calle 3", 90_000_000);
 
         agencia.agregarInmueble(apt);
         agencia.agregarInmueble(casa);
         agencia.agregarInmueble(lote);
-        agencia.arrendar((Arrendable) apt);
+
+        agencia.arrendar(apt);
+        agencia.arrendar(casa);
+        agencia.arrendar(apt);
+        agencia.arrendar(lote);
+//        agencia.vender(casa);
+//        agencia.devolver(casa);
+
 
         System.out.printf("Los inmuebles arrendados son los siguietes: \n");
         agencia.getArrendados();

@@ -2,8 +2,8 @@ package com.juanchis.inmobiliaria.dominio;
 
 public class Lote extends Inmueble {
 
-    public Lote(String direccion, long valorVenta, long valorArriendo) {
-        super(direccion, valorVenta, valorArriendo);
+    public Lote(String direccion, long valorVenta) {
+        super(direccion, valorVenta);
     }
 
     @Override

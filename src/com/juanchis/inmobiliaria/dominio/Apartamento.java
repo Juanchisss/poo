@@ -6,6 +6,7 @@ public class Apartamento extends Inmueble implements Arrendable{
 
     public Apartamento(String direccion, long valorVenta, long valorArriendo) {
         super(direccion, valorVenta, valorArriendo);
+
     }
 
     @Override

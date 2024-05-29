@@ -13,6 +13,11 @@ public abstract class Inmueble {
         this.arrendado = false;
     }
 
+    public Inmueble(String direccion, long valorVenta) {
+        this.direccion = direccion;
+        this.valorVenta = valorVenta;
+    }
+
     @Override
     public String toString() {
         return "Inmueble{" +
@@ -21,5 +26,37 @@ public abstract class Inmueble {
                 ", valorArriendo=" + valorArriendo +
                 ", arrendado=" + arrendado +
                 '}';
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public long getValorVenta() {
+        return valorVenta;
+    }
+
+    public void setValorVenta(long valorVenta) {
+        this.valorVenta = valorVenta;
+    }
+
+    public long getValorArriendo() {
+        return valorArriendo;
+    }
+
+    public void setValorArriendo(long valorArriendo) {
+        this.valorArriendo = valorArriendo;
+    }
+
+    public boolean isArrendado() {
+        return arrendado;
+    }
+
+    public void setArrendado(boolean arrendado) {
+        this.arrendado = arrendado;
     }
 }
